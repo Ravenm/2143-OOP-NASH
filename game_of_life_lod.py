@@ -17,8 +17,11 @@ Any dead cell with exactly three live neighbours becomes a live cell, as if by r
 
 
 class GolBoard(object):
-    def __init__(self, rows=20, cols=20, populate=False, density=.25):
-        random.seed(254)
+    def __init__(self, rows=20, cols=20, populate=False, density=.25, generation=0, seed=None):
+        random.seed(seed)
+        self.generation = generation
+        self.genMap = {}
+        self.edge = []
         self.width = cols
         self.height = rows
 
@@ -42,6 +45,23 @@ class GolBoard(object):
         self.currentGen[col - 1][row - 1] = True
 
     """
+    @function: hexafy
+    @description: Computes hex value of a board
+    @param: none
+    @returns: hexvalue
+    """
+
+    def hexafy(self, hexme):
+        string = ""
+        for row in range(self.height):
+            for col in range(self.width):
+                if hexme[row][col]:
+                    string += '1'
+                else:
+                    string += '0'
+        return hex(int(string, 2))
+
+    """
     @function: computeNextGen
     @description: Computes the next generation our cellular automata
     @param: None
@@ -50,9 +70,25 @@ class GolBoard(object):
 
     def compute_nextgen(self):
         nextgen = self.init_gen()
+        nextedge = []
+        self.edge = []
         for row in range(self.height):
             for col in range(self.width):
                 nextgen[row][col] = self.liv_or_die(row, col)
+
+        hexnextgen = self.hexafy(nextgen)
+        hexcurrent = self.hexafy(self.currentGen)
+
+        nextedge.append(hexnextgen)
+        nextedge.append(hexcurrent)
+
+        if hexnextgen in self.genMap:
+            if self.genMap[hexnextgen] == nextedge:
+                self.generation += 1
+        self.edge.append(hexcurrent)
+        self.edge.append(hexnextgen)
+        self.genMap = {hexcurrent: self.edge}
+
         self.currentGen = nextgen
 
     """
@@ -160,7 +196,18 @@ class GolBoard(object):
     def print_debug(self):
         for row in self.currentGen:
             print(row)
-
+    """
+    @function: playgame
+    @description: runs a game of life
+    @param: None
+    @returns: None
+    """
+    def play_game(self):
+            while self.generation < 3:
+                self.compute_nextgen()
+                clear_screen()
+                print(self.stringify_world())
+                time.sleep(sleep)
 
 """
 @function: clearScreen
@@ -183,18 +230,13 @@ def print_list(mylist):
         for cols in range(len(mylist)):
             string += "%d " % (mylist[rows][cols])
         string += "\n"
-    print string
+    print(string)
 
 if __name__ == '__main__':
     rows = 20
     cols = 30
-    generations = 100
     density = .25
-    sleep = .5
+    sleep = .2
     clear_screen()
-    b = GolBoard(rows, cols, True, density)
-    for x in range(generations):
-        b.compute_nextgen()
-        clear_screen()
-        print(b.stringify_world())
-        time.sleep(sleep)
+    b = GolBoard(rows, cols, True, density, 0, 42)
+    b.play_game()
