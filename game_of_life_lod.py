@@ -107,7 +107,7 @@ class GolBoard(object):
         # 5 % 5 is 0 with this there is no need for complex if else chains to find an edge.
 
         neighbors.append(self.currentGen[(r - 1) % self.height][(c - 1) % self.width])  # upper left
-        neighbors.append(self.currentGen[r][(c - 1) % self.height])  # upper middle
+        neighbors.append(self.currentGen[r][(c - 1) % self.width])  # upper middle
         neighbors.append(self.currentGen[(r + 1) % self.height][(c - 1) % self.width])  # upper right
         neighbors.append(self.currentGen[(r + 1) % self.height][c])  # right
         neighbors.append(self.currentGen[(r - 1) % self.height][c])  # left
