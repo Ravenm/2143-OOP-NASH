@@ -63,7 +63,7 @@ class GolBoard(object):
 
     """
     @function: computeNextGen
-    @description: Computes the next generation our cellular automata
+    @description: Computes the next generation our cellular automata. uses mapping for cycle detection.
     @param: None
     @returns: None
     """
@@ -94,9 +94,9 @@ class GolBoard(object):
     """
     @function: liveOrDie
     @description: Calculates whether a cell lives or dies based on Game of Life rules
-    @param: int x - Column to check
-    @param: int y - Row to check
-    @returns: Int : 0 = nothing changes , -1 = dies , 1 = birth
+    @param: int c - Column to check
+    @param: int r - Row to check
+    @returns: true or false
     """
 
     def liv_or_die(self, r, c):
@@ -233,10 +233,11 @@ def print_list(mylist):
     print(string)
 
 if __name__ == '__main__':
-    rows = 20
-    cols = 30
+    rows = 40
+    cols = 80
     density = .25
     sleep = .2
+    seed = None
     clear_screen()
-    b = GolBoard(rows, cols, True, density, 0, 42)
+    b = GolBoard(rows, cols, True, density, 0, seed)
     b.play_game()
