@@ -233,10 +233,11 @@ def print_list(mylist):
     print(string)
 
 if __name__ == '__main__':
-    rows = 20
-    cols = 30
+    rows = 40
+    cols = 80
     density = .25
     sleep = .2
+    seed = None
     clear_screen()
-    b = GolBoard(rows, cols, True, density, 0, 42)
+    b = GolBoard(rows, cols, True, density, 0, seed)
     b.play_game()
