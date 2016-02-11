@@ -3,20 +3,19 @@ import os
 import random
 import platform
 
-"""
-NOT COMPLETE!
-
-An introduction to python using the game of life as a problem to solve in class.
-Not the most pythonic or succinct solution, but it's not meant to be.
-
-Any live cell with fewer than two live neighbours dies, as if caused by under-population.
-Any live cell with two or three live neighbours lives on to the next generation.
-Any live cell with more than three live neighbours dies, as if by over-population.
-Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
-"""
-
 
 class GolBoard(object):
+    """
+    COMPLETE!
+
+    An introduction to python using the game of life as a problem to solve in class.
+    Not the most pythonic or succinct solution, but it's not meant to be.
+
+    Any live cell with fewer than two live neighbours dies, as if caused by under-population.
+    Any live cell with two or three live neighbours lives on to the next generation.
+    Any live cell with more than three live neighbours dies, as if by over-population.
+    Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+    """
     def __init__(self, rows=20, cols=20, populate=False, density=.25, generation=0, seed=None):
         random.seed(seed)
         self.generation = generation
@@ -31,27 +30,40 @@ class GolBoard(object):
             self.currentGen = self.init_gen()
 
     def __str__(self):
+        """print out width and height.
+
+        prints the values of width and height used for board.
+
+        :return:
+            width, height
+        """
         return "width:%d height:%d" % (self.width, self.height)
 
-    """
-    @function: makeAlive
-    @description: Adds a life to specified location
-    @param: int x - Column to add life
-    @param: int y - Row to add life
-    @returns: None
-    """
-
     def make_alive(self, row, col):
+        """sets cell to True.
+
+        :description:
+                Adds a life to specified location on the board by setting that cell to True.
+        :param col:
+            Column to add life
+        :param row:
+            Row to add life
+        :returns:
+            None
+        """
         self.currentGen[col - 1][row - 1] = True
 
-    """
-    @function: hexafy
-    @description: Computes hex value of a board
-    @param: none
-    @returns: hexvalue
-    """
-
     def hexafy(self, hexme):
+        """Computes hex value of string
+
+        :description:
+            Takes the binary value of a board computes hex value and creates a single string. Used for faster
+            map compares.
+        :param:
+            none
+        :returns:
+            hexvalue: a string containing hex values.
+        """
         string = ""
         for row in range(self.height):
             for col in range(self.width):
@@ -61,14 +73,19 @@ class GolBoard(object):
                     string += '0'
         return hex(int(string, 2))
 
-    """
-    @function: computeNextGen
-    @description: Computes the next generation our cellular automata. uses mapping for cycle detection.
-    @param: None
-    @returns: None
-    """
-
     def compute_nextgen(self):
+        """Computes the next generation.
+
+        :description:
+            Computes the next generation of board based on liveorDie method. Overwrites the old board with new board.
+            Adds new boards to map and checks if they exist or not. Map consists of node and edge. Edge represents the
+            future of a board based on the fact that a unique generation can only have one outcome for next generation.
+
+        :param:
+            None
+        :returns:
+            None
+        """
         nextgen = self.init_gen()
         nextedge = []
         self.edge = []
@@ -91,15 +108,20 @@ class GolBoard(object):
 
         self.currentGen = nextgen
 
-    """
-    @function: liveOrDie
-    @description: Calculates whether a cell lives or dies based on Game of Life rules
-    @param: int c - Column to check
-    @param: int r - Row to check
-    @returns: true or false
-    """
-
     def liv_or_die(self, r, c):
+        """Calculates whether a cell lives of dies.
+
+        :description:
+            Uses % to wrap table edges in the event of search 'falling' off edge. Checks 8 neighbors for values, If cell
+            is alive and 2 or 3 neighbors are alive then cell stays alive. If more than 3 neighbors cell dies. If a dead
+            cell has exactly 3 neighbors it comes to life.
+        :param:
+            c - Column to check
+        :param:
+            r - Row to check
+        :returns:
+            true or false
+        """
         neighbors = []
         alive = self.currentGen[r][c]
 
@@ -128,14 +150,16 @@ class GolBoard(object):
             else:
                 return False
 
-    """
-    @function: initGen
-    @description: Initializes a single generation
-    @param: None
-    @returns: list - 2D list containing False
-    """
-
     def init_gen(self):
+        """Creates a game table
+
+        :description:
+            Initializes a table with all false values. ie a blank table.
+        :param:
+            None
+        :returns:
+            board - 2D list containing False
+        """
         # return [[False] * self.width for row in range(self.height)]
         # board = [i for i in range(self.height)]
         # for i in range(self.height):
@@ -144,14 +168,16 @@ class GolBoard(object):
         board = [[False for i in range(self.width)] for j in range(self.height)]
         return board
 
-    """
-    @function: initRandGen
-    @description: Initializes a random generation
-    @param: float - density (how many lives to create)
-    @returns: list - 2D list containing False and True
-    """
-
     def init_randgen(self, density):
+        """Creats a game table
+
+        :description:
+            Initializes a random generation table. Uses density to approx a spread of random binary values.
+        :param:
+            density - (how many lives to create)
+        :returns:
+            gen - 2D list containing False and True
+        """
         gen = self.init_gen()
 
         numberoflives = int(self.width * self.height * density)
@@ -162,27 +188,31 @@ class GolBoard(object):
             gen[row][col] = self.random_life()  # ??
         return gen
 
-    """
-    @function: randomLife
-    @description: Generates a random life (zero or one)
-    @param: none
-    @returns: bool - zero or one (alive or dead)
-    """
-
     def random_life(self):
+        """Used by randgen to create random life.
+
+        :description:
+            Generates a random life (zero or one) with 50/50 odds
+        :param:
+            none
+        :returns:
+            bool - zero or one (alive or dead)
+        """
         if random.random() > .5:
             return True
         else:
             return False
 
-    """
-    @function: stringifyWorld
-    @description: Creates a string version of the 2D list representing our world
-    @param: none
-    @returns: string - a string version
-    """
-
     def stringify_world(self):
+        """Creates a string version of board
+
+        :description:
+            Creates a string version of the 2D list representing our world
+        :param:
+            none
+        :returns:
+            string - a string version of board
+        """
         string = "\n\n"
         for row in self.currentGen:
             for cell in row:
@@ -194,35 +224,33 @@ class GolBoard(object):
         return string
 
     def print_debug(self):
+        """debug utility
+        """
         for row in self.currentGen:
             print(row)
-    """
-    @function: playgame
-    @description: runs a game of life
-    @param: None
-    @returns: None
-    """
+
     def play_game(self):
-            while self.generation < 3:
-                self.compute_nextgen()
-                clear_screen()
-                print(self.stringify_world())
-                time.sleep(sleep)
+        """Runs game of life.
 
-"""
-@function: clearScreen
-@description: Clears the terminal screen
-@param: None
-@returns: None
-"""
-
+        :description:
+            Calls next gen with a while loop that is gated by generation. Generation is incremented by nextgen when
+            compairing the generations to a map. Calls stringify_world to print board.
+        :param:
+            None
+        :returns:
+            None
+        """
+        while self.generation < 3:
+            self.compute_nextgen()
+            clear_screen()
+            print(self.stringify_world())
+            time.sleep(sleep)
 
 def clear_screen():
     if platform.system() == 'Darwin':
         os.system('clear')
     else:
         os.system('cls')
-
 
 def print_list(mylist):
     string = ""
