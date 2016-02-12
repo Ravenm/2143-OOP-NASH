@@ -3,6 +3,7 @@ Fraction
 ########
 
 
-.. automodule:: game_of_life_lod
+.. automodule:: fraction_class
     :members:
+    :special-members:
     :undoc-members:

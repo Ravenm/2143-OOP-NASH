@@ -1,14 +1,15 @@
-"""
-Author: Nash
-"""
 
 class Fraction(object):
+    """
+    Simple fraction class created to show overloading
+    """
     def __init__(self, n=None, d=None):
         self.numerator = n
         self.denominator = d
 
     def __str__(self):
         """used to print fraction
+
         :description:
             overrride of print function used to print out a fraction as a whole number and a fraction.
 
@@ -29,6 +30,7 @@ class Fraction(object):
 
     def __mul__(self, rhs):
         """Overrides the built in multiplication function
+
         :description:
             Used to multiply two fractions. uses the built in math operator.
         :param:
@@ -42,6 +44,7 @@ class Fraction(object):
 
     def __add__(self, rhs):
         """Override of built in add
+
         :description:
             This function overrides the built in add function and allows for adding fractions.
         :param:
