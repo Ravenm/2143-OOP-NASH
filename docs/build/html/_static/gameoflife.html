@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Game Of Life &mdash; OOP 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="classic.css" type="text/css" />
+    <link rel="stylesheet" href="pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="doctools.js"></script>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="top" title="OOP 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Fraction" href="fraction.html" />
+    <link rel="prev" title="Welcome to OOP’s documentation!" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fraction.html" title="Fraction"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to OOP’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OOP 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-game_of_life_lod">
+<span id="game-of-life"></span><h1>Game Of Life<a class="headerlink" href="#module-game_of_life_lod" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="game_of_life_lod.GolBoard">
+<em class="property">class </em><code class="descclassname">game_of_life_lod.</code><code class="descname">GolBoard</code><span class="sig-paren">(</span><em>rows=20</em>, <em>cols=20</em>, <em>populate=False</em>, <em>density=0.25</em>, <em>generation=0</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard" title="Permalink to this definition">¶</a></dt>
+<dd><p>COMPLETE!</p>
+<p>An introduction to python using the game of life as a problem to solve in class.
+Not the most pythonic or succinct solution, but it&#8217;s not meant to be.</p>
+<p>Any live cell with fewer than two live neighbours dies, as if caused by under-population.
+Any live cell with two or three live neighbours lives on to the next generation.
+Any live cell with more than three live neighbours dies, as if by over-population.
+Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</p>
+<dl class="method">
+<dt id="game_of_life_lod.GolBoard.compute_nextgen">
+<code class="descname">compute_nextgen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.compute_nextgen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the next generation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Computes the next generation of board based on liveorDie method. Overwrites the old board with new board.
+Adds new boards to map and checks if they exist or not. Map consists of node and edge. Edge represents the
+future of a board based on the fact that a unique generation can only have one outcome for next generation.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="game_of_life_lod.GolBoard.hexafy">
+<code class="descname">hexafy</code><span class="sig-paren">(</span><em>hexme</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.hexafy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes hex value of string</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Takes the binary value of a board computes hex value and creates a single string. Used for faster
+map compares.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">none</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">hexvalue: a string containing hex values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="game_of_life_lod.GolBoard.init_gen">
+<code class="descname">init_gen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.init_gen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a game table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Initializes a table with all false values. ie a blank table.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">board - 2D list containing False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="game_of_life_lod.GolBoard.init_randgen">
+<code class="descname">init_randgen</code><span class="sig-paren">(</span><em>density</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.init_randgen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creats a game table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Initializes a random generation table. Uses density to approx a spread of random binary values.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">density - (how many lives to create)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">gen - 2D list containing False and True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="game_of_life_lod.GolBoard.liv_or_die">
+<code class="descname">liv_or_die</code><span class="sig-paren">(</span><em>r</em>, <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.liv_or_die" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates whether a cell lives of dies.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Uses % to wrap table edges in the event of search &#8216;falling&#8217; off edge. Checks 8 neighbors for values, If cell
+is alive and 2 or 3 neighbors are alive then cell stays alive. If more than 3 neighbors cell dies. If a dead
+cell has exactly 3 neighbors it comes to life.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">c - Column to check</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body">r - Row to check</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">true or false</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="game_of_life_lod.GolBoard.make_alive">
+<code class="descname">make_alive</code><span class="sig-paren">(</span><em>row</em>, <em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.make_alive" title="Permalink to this definition">¶</a></dt>
+<dd><p>sets cell to True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Adds a life to specified location on the board by setting that cell to True.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>col</strong> &#8211; Column to add life</li>
+<li><strong>row</strong> &#8211; Row to add life</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="game_of_life_lod.GolBoard.play_game">
+<code class="descname">play_game</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.play_game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs game of life.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Calls next gen with a while loop that is gated by generation. Generation is incremented by nextgen when
+compairing the generations to a map. Calls stringify_world to print board.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="game_of_life_lod.GolBoard.print_debug">
+<code class="descname">print_debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.print_debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>debug utility</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="game_of_life_lod.GolBoard.random_life">
+<code class="descname">random_life</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.random_life" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used by randgen to create random life.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Generates a random life (zero or one) with 50/50 odds</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">none</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool - zero or one (alive or dead)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="game_of_life_lod.GolBoard.stringify_world">
+<code class="descname">stringify_world</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.stringify_world" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a string version of board</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Creates a string version of the 2D list representing our world</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">none</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string - a string version of board</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="game_of_life_lod.clear_screen">
+<code class="descclassname">game_of_life_lod.</code><code class="descname">clear_screen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.clear_screen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="game_of_life_lod.print_list">
+<code class="descclassname">game_of_life_lod.</code><code class="descname">print_list</code><span class="sig-paren">(</span><em>mylist</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.print_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="snorlaxlogo.jpg" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Welcome to OOP&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="fraction.html"
+                        title="next chapter">Fraction</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_static/gameoflife.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fraction.html" title="Fraction"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to OOP’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OOP 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, A Nash.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
+    </div>
+  </body>
+</html>
