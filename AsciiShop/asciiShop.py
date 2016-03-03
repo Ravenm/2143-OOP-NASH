@@ -132,6 +132,7 @@ class AsciiImage(RandomCat):
         self.imageAsAscii = ''.join(ch for ch in self.imageAsAscii)
         for c in range(0, len(self.imageAsAscii), self.newWidth):
             print(self.imageAsAscii[c:c+self.newWidth])
+        print('')
 
     def scale_img(self, x, y):
         """
@@ -147,7 +148,7 @@ class AsciiImage(RandomCat):
         rf = self.newHeight/y
         cf = self.newWidth/x
 
-        print(len(self.matrix[1]))
+        #print(len(self.matrix[1]))
 
         tempmatrix = [[0 for foo in range(x)] for boo in range(y)]
         for i in range(y):
@@ -180,6 +181,35 @@ class AsciiImage(RandomCat):
                 print(tempmatrix[i][j], end="")
 
             print("")
+        print('')
+
+    def flipit(self, direction):
+        """
+
+        :return:
+        :rtype:
+        """
+
+        if direction == 'up':
+            self.imageAsAscii = self.imageAsAscii[::-1]
+            self.print_image()
+            self.imageAsAscii = self.imageAsAscii[::-1]
+
+        else:
+            count = 0
+            while count < 2:
+                tempstring = ""
+                retstring = []
+                div = self.newWidth
+                for x in range(self.newHeight):
+                    tempstring = self.imageAsAscii[div-self.newWidth:div]
+
+                    div += self.newWidth
+                    retstring.append(tempstring[::-1])
+                self.imageAsAscii = ''.join(retstring)
+                if count == 0:
+                    self.print_image()
+                count += 1
 
 
 def list_to_matrix(l, n):
@@ -204,4 +234,5 @@ if __name__ == '__main__':
 
     awesomeCat.convert_to_ascii()
     awesomeCat.print_image()
-    awesomeCat.scale_img(100, 100)
+    awesomeCat.scale_img(50, 20)
+    awesomeCat.flipit('up')
