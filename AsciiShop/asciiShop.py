@@ -43,9 +43,10 @@ class RandomCat(object):
     def get_image(self):
         """Gets a cat image
         :Description:
-            Gets a random cat image and saves to file system. Uses get_time_stamp for naming of file.
+        Gets a random cat image and saves to file system. Uses get_time_stamp for naming of file.
         :param: none
         :return: none
+
         """
 
         self.name = self.get_time_stamp()
@@ -66,8 +67,9 @@ class RandomCat(object):
     def get_time_stamp(self):
         """Gets time in seconds
         :description:
-            Grabs current time in seconds from nuclear clock.
+        Grabs current time in seconds from nuclear clock.
         :returns: current time in seconds
+
         """
 
         seconds, milli = str(time.time()).split('.')
@@ -119,6 +121,7 @@ class AsciiImage(RandomCat):
 
         :return:
         :rtype:
+
         """
         self.convert_to_gray_scale()
         all_pixels = list(self.newImage.getdata())
@@ -143,6 +146,7 @@ class AsciiImage(RandomCat):
         :return:
         :rtype:
          :todo: make comments
+
         """
 
         rf = self.newHeight/y
@@ -187,7 +191,8 @@ class AsciiImage(RandomCat):
         """
 
         :return:
-        :rtype:
+
+ :rtype:
         """
 
         if direction == 'up':
@@ -225,6 +230,7 @@ def list_to_matrix(l, n):
         [[0,1,2],
         [3,4,5],
         [6,7,8]]
+
     """
     return [l[i:i+n] for i in range(0, len(l), n)]
 
