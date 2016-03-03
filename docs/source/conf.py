@@ -16,12 +16,16 @@
 import sys
 import os
 
+
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 # sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../../homework1'))
 sys.path.insert(1, os.path.abspath('../../homework2-gameoflife'))
+sys.path.insert(2, os.path.abspath('../../AsciiShop'))
+sys.path.insert(3, os.path.abspath('../../env'))
 
 # -- General configuration ------------------------------------------------
 
@@ -105,7 +109,7 @@ pygments_style = 'sphinx'
 #keep_warnings = False
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = False
+todo_include_todos = True
 
 
 # -- Options for HTML output ----------------------------------------------
@@ -141,7 +145,7 @@ html_favicon = '_static/favicon.ico'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['nstatic']
+html_static_path = ['_static']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied

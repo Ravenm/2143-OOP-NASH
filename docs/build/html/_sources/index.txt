@@ -13,6 +13,7 @@ Contents:
 
    _static/gameoflife
    _static/fraction
+   _static/asciicat
 
 Indices and tables
 ==================
