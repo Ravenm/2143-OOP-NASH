@@ -3,6 +3,6 @@ AsciiCat
 ########
 
 
-.. automodule:: asciiShop
+.. automodule:: AsciiShop
     :members:
     :undoc-members:

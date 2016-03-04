@@ -3,7 +3,7 @@ Fraction
 ########
 
 
-.. automodule:: fraction_class
+.. automodule:: FractionClass
     :members:
     :special-members:
     :undoc-members:
