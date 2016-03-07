@@ -3,6 +3,6 @@ Game Of Life
 ############
 
 
-.. automodule:: game_of_life_lod
+.. automodule:: GameOfLifeLod
     :members:
     :undoc-members:
