@@ -53,11 +53,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-game_of_life_lod">
-<span id="game-of-life"></span><h1>Game Of Life<a class="headerlink" href="#module-game_of_life_lod" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-GameOfLifeLod">
+<span id="game-of-life"></span><h1>Game Of Life<a class="headerlink" href="#module-GameOfLifeLod" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="game_of_life_lod.GolBoard">
-<em class="property">class </em><code class="descclassname">game_of_life_lod.</code><code class="descname">GolBoard</code><span class="sig-paren">(</span><em>rows=20</em>, <em>cols=20</em>, <em>populate=False</em>, <em>density=0.25</em>, <em>generation=0</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.GolBoard">
+<em class="property">class </em><code class="descclassname">GameOfLifeLod.</code><code class="descname">GolBoard</code><span class="sig-paren">(</span><em>rows=20</em>, <em>cols=20</em>, <em>populate=False</em>, <em>density=0.25</em>, <em>generation=0</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.GolBoard" title="Permalink to this definition">¶</a></dt>
 <dd><p>COMPLETE!</p>
 <p>An introduction to python using the game of life as a problem to solve in class.
 Not the most pythonic or succinct solution, but it&#8217;s not meant to be.</p>
@@ -66,8 +66,8 @@ Any live cell with two or three live neighbours lives on to the next generation.
 Any live cell with more than three live neighbours dies, as if by over-population.
 Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</p>
 <dl class="method">
-<dt id="game_of_life_lod.GolBoard.compute_nextgen">
-<code class="descname">compute_nextgen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.compute_nextgen" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.GolBoard.compute_nextgen">
+<code class="descname">compute_nextgen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.GolBoard.compute_nextgen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the next generation.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -86,8 +86,8 @@ future of a board based on the fact that a unique generation can only have one o
 </dd></dl>
 
 <dl class="method">
-<dt id="game_of_life_lod.GolBoard.hexafy">
-<code class="descname">hexafy</code><span class="sig-paren">(</span><em>hexme</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.hexafy" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.GolBoard.hexafy">
+<code class="descname">hexafy</code><span class="sig-paren">(</span><em>hexme</em><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.GolBoard.hexafy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes hex value of string</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -105,8 +105,8 @@ map compares.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="game_of_life_lod.GolBoard.init_gen">
-<code class="descname">init_gen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.init_gen" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.GolBoard.init_gen">
+<code class="descname">init_gen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.GolBoard.init_gen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a game table</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -123,8 +123,8 @@ map compares.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="game_of_life_lod.GolBoard.init_randgen">
-<code class="descname">init_randgen</code><span class="sig-paren">(</span><em>density</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.init_randgen" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.GolBoard.init_randgen">
+<code class="descname">init_randgen</code><span class="sig-paren">(</span><em>density</em><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.GolBoard.init_randgen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creats a game table</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -141,8 +141,8 @@ map compares.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="game_of_life_lod.GolBoard.liv_or_die">
-<code class="descname">liv_or_die</code><span class="sig-paren">(</span><em>r</em>, <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.liv_or_die" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.GolBoard.liv_or_die">
+<code class="descname">liv_or_die</code><span class="sig-paren">(</span><em>r</em>, <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.GolBoard.liv_or_die" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates whether a cell lives of dies.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -163,8 +163,8 @@ cell has exactly 3 neighbors it comes to life.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="game_of_life_lod.GolBoard.make_alive">
-<code class="descname">make_alive</code><span class="sig-paren">(</span><em>row</em>, <em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.make_alive" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.GolBoard.make_alive">
+<code class="descname">make_alive</code><span class="sig-paren">(</span><em>row</em>, <em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.GolBoard.make_alive" title="Permalink to this definition">¶</a></dt>
 <dd><p>sets cell to True.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -187,8 +187,8 @@ cell has exactly 3 neighbors it comes to life.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="game_of_life_lod.GolBoard.play_game">
-<code class="descname">play_game</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.play_game" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.GolBoard.play_game">
+<code class="descname">play_game</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.GolBoard.play_game" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs game of life.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -206,14 +206,14 @@ compairing the generations to a map. Calls stringify_world to print board.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="game_of_life_lod.GolBoard.print_debug">
-<code class="descname">print_debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.print_debug" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.GolBoard.print_debug">
+<code class="descname">print_debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.GolBoard.print_debug" title="Permalink to this definition">¶</a></dt>
 <dd><p>debug utility</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="game_of_life_lod.GolBoard.random_life">
-<code class="descname">random_life</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.random_life" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.GolBoard.random_life">
+<code class="descname">random_life</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.GolBoard.random_life" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used by randgen to create random life.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -230,8 +230,8 @@ compairing the generations to a map. Calls stringify_world to print board.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="game_of_life_lod.GolBoard.stringify_world">
-<code class="descname">stringify_world</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.GolBoard.stringify_world" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.GolBoard.stringify_world">
+<code class="descname">stringify_world</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.GolBoard.stringify_world" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a string version of board</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -250,13 +250,13 @@ compairing the generations to a map. Calls stringify_world to print board.</td>
 </dd></dl>
 
 <dl class="function">
-<dt id="game_of_life_lod.clear_screen">
-<code class="descclassname">game_of_life_lod.</code><code class="descname">clear_screen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.clear_screen" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.clear_screen">
+<code class="descclassname">GameOfLifeLod.</code><code class="descname">clear_screen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.clear_screen" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="game_of_life_lod.print_list">
-<code class="descclassname">game_of_life_lod.</code><code class="descname">print_list</code><span class="sig-paren">(</span><em>mylist</em><span class="sig-paren">)</span><a class="headerlink" href="#game_of_life_lod.print_list" title="Permalink to this definition">¶</a></dt>
+<dt id="GameOfLifeLod.print_list">
+<code class="descclassname">GameOfLifeLod.</code><code class="descname">print_list</code><span class="sig-paren">(</span><em>mylist</em><span class="sig-paren">)</span><a class="headerlink" href="#GameOfLifeLod.print_list" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>

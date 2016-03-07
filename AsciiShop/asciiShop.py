@@ -6,12 +6,13 @@ from PIL import Image
 import math
 import re
 
-
 url = 'http://thecatapi.com/api/images/get'
 
 
 class RandomCat(object):
-
+    """
+    RandomCat grabs a random cat image for use in AsciiShop
+    """
     def __init__(self):
 
         self.name = ''          # name of image
@@ -21,15 +22,9 @@ class RandomCat(object):
         self.height = 0         # height of image
         self.img = None         # Pillow var to hold image
 
-    """
-    @Description:
-    - Uses random cat to go get an amazing image from the internet
-    - Names the image
-    - Saves the image to some location
-    @Returns:
-    """
     def get_image(self):
         """Gets a cat image
+
         :Description:
             Gets a random cat image and saves to file system. Uses get_time_stamp for naming of file.
         :param: none
@@ -51,8 +46,9 @@ class RandomCat(object):
 
     def get_time_stamp(self):
         """Gets time in seconds
+
         :description:
-        Grabs current time in seconds from nuclear clock.
+            Grabs current time in seconds from nuclear clock.
         :returns: current time in seconds
 
         """
@@ -61,16 +57,10 @@ class RandomCat(object):
         return seconds
 
 
-"""
-The ascii character set we use to replace pixels.
-The grayscale pixel values are 0-255.
-0 - 25 = '#' (darkest character)
-250-255 = '.' (lightest character)
-"""
-
-
 class AsciiImage(RandomCat):
-
+    """
+    AsciiImage takes a jpg and converts it to an ascii art image.
+    """
     def __init__(self, new_width="not_set"):
         """
         :description:
@@ -117,6 +107,7 @@ class AsciiImage(RandomCat):
         :description:
             Uses convert_to_gray_scale to create a map of color values that are then exchanged for ascii characters to
             create an image.
+
         :return: none
 
         """
@@ -137,8 +128,8 @@ class AsciiImage(RandomCat):
     def scale_img(self, x, y):
         """
         :description:
-            Scales the image stored in self.matrix. self.matrix is expected to be the gray scale values of the current
-            image. Prints the new image but does not store it.
+            Scales the image stored in self.matrix. self.matrix is expected to be the gray scale values of
+            the current image. Prints the new image but does not store it.
         :param x: number of columns
         :type x: int
         :param y: number of rows
@@ -220,7 +211,7 @@ class AsciiImage(RandomCat):
 def list_to_matrix(l, n):
     """
     :description:
-    Convert to 2D list of lists to help with manipulating the ascii image.
+        Convert to 2D list of lists to help with manipulating the ascii image.
     :Example:
 
         L = [0,1,2,3,4,5,6,7,8]
@@ -233,6 +224,7 @@ def list_to_matrix(l, n):
         [6,7,8]]
     :param l: list to be converted
     :param n: column size
+
     """
     return [l[i:i+n] for i in range(0, len(l), n)]
 

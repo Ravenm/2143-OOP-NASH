@@ -26,6 +26,7 @@ sys.path.insert(0, os.path.abspath('../../homework1'))
 sys.path.insert(1, os.path.abspath('../../homework2-gameoflife'))
 sys.path.insert(2, os.path.abspath('../../AsciiShop'))
 sys.path.insert(3, os.path.abspath('../../env'))
+sys.path.insert(4, os.path.abspath('../../shapes'))
 
 # -- General configuration ------------------------------------------------
 

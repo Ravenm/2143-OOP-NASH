@@ -14,6 +14,7 @@ Contents:
    _static/gameoflife
    _static/fraction
    _static/asciicat
+   _static/shapes
 
 Indices and tables
 ==================
