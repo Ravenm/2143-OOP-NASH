@@ -10,18 +10,6 @@ import re
 url = 'http://thecatapi.com/api/images/get'
 
 
-def get_cat(directory=None, filename=None, format='png'):
-    basename = '%s.%s' % (filename if filename else str(uuid.uuid4()), format)
-    savefile = os.path.sep.join([directory.rstrip(os.path.sep), basename]) if directory else basename
-    downloadlink = url + '?type=%s' % format
-    http = urllib3.PoolManager()
-    r = http.request('GET', downloadlink)
-    fp = open(savefile, 'wb')
-    fp.write(r.data)
-    fp.close()
-    return savefile
-
-
 class RandomCat(object):
 
     def __init__(self):
@@ -43,7 +31,7 @@ class RandomCat(object):
     def get_image(self):
         """Gets a cat image
         :Description:
-        Gets a random cat image and saves to file system. Uses get_time_stamp for naming of file.
+            Gets a random cat image and saves to file system. Uses get_time_stamp for naming of file.
         :param: none
         :return: none
 
@@ -61,9 +49,6 @@ class RandomCat(object):
     def name_image(self):
         pass
 
-    """
-    Gets time stamp from local system
-    """
     def get_time_stamp(self):
         """Gets time in seconds
         :description:
@@ -87,6 +72,14 @@ The grayscale pixel values are 0-255.
 class AsciiImage(RandomCat):
 
     def __init__(self, new_width="not_set"):
+        """
+        :description:
+            AsciiImage takes a jpg and creates an ascii art version of the image.
+        :param new_width: sets width of ascii picture
+        :type new_width: int
+        :return: none
+
+        """
         super(AsciiImage, self).__init__()
 
         self.newWidth = new_width
@@ -100,6 +93,12 @@ class AsciiImage(RandomCat):
         self.grayScale = None
 
     def convert_to_gray_scale(self):
+        """
+        :description:
+            Converts a jpg to gray scale.
+        :return: none
+
+        """
         if self.grayScale is None:
             if self.newWidth == "not_set":
                 self.newWidth = self.width
@@ -113,14 +112,12 @@ class AsciiImage(RandomCat):
             self.newImage = self.img.resize((self.newWidth, self.newHeight))
             self.newImage = self.newImage.convert("L")  # convert to gray scale
 
-    """
-    Your comments here
-    """
     def convert_to_ascii(self):
         """
-
-        :return:
-        :rtype:
+        :description:
+            Uses convert_to_gray_scale to create a map of color values that are then exchanged for ascii characters to
+            create an image.
+        :return: none
 
         """
         self.convert_to_gray_scale()
@@ -139,20 +136,21 @@ class AsciiImage(RandomCat):
 
     def scale_img(self, x, y):
         """
-        :param x:
-        :type x:
-        :param y:
-        :type y:
-        :return:
-        :rtype:
-         :todo: make comments
+        :description:
+            Scales the image stored in self.matrix. self.matrix is expected to be the gray scale values of the current
+            image. Prints the new image but does not store it.
+        :param x: number of columns
+        :type x: int
+        :param y: number of rows
+        :type y: int
+        :return: none
 
         """
 
         rf = self.newHeight/y
         cf = self.newWidth/x
 
-        #print(len(self.matrix[1]))
+        # print(len(self.matrix[1]))
 
         tempmatrix = [[0 for foo in range(x)] for boo in range(y)]
         for i in range(y):
@@ -189,10 +187,12 @@ class AsciiImage(RandomCat):
 
     def flipit(self, direction):
         """
+        :description:
+            Flips the current image on an axis. Prints the changes but does not save them.
+        :param direction: expects any string for left/right and up for up/down.
+        :type direction: string
+        :return: none
 
-        :return:
-
- :rtype:
         """
 
         if direction == 'up':
@@ -219,8 +219,9 @@ class AsciiImage(RandomCat):
 
 def list_to_matrix(l, n):
     """
+    :description:
     Convert to 2D list of lists to help with manipulating the ascii image.
-    Example:
+    :Example:
 
         L = [0,1,2,3,4,5,6,7,8]
 
@@ -230,9 +231,22 @@ def list_to_matrix(l, n):
         [[0,1,2],
         [3,4,5],
         [6,7,8]]
-
+    :param l: list to be converted
+    :param n: column size
     """
     return [l[i:i+n] for i in range(0, len(l), n)]
+
+
+def get_cat(directory=None, filename=None, format='png'):
+    basename = '%s.%s' % (filename if filename else str(uuid.uuid4()), format)
+    savefile = os.path.sep.join([directory.rstrip(os.path.sep), basename]) if directory else basename
+    downloadlink = url + '?type=%s' % format
+    http = urllib3.PoolManager()
+    r = http.request('GET', downloadlink)
+    fp = open(savefile, 'wb')
+    fp.write(r.data)
+    fp.close()
+    return savefile
 
 if __name__ == '__main__':
     awesomeCat = AsciiImage(150)
