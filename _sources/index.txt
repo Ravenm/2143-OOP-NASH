@@ -15,6 +15,7 @@ Contents:
    _static/fraction
    _static/asciicat
    _static/shapes
+   _static/binarytree
 
 Indices and tables
 ==================
