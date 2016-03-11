@@ -56,6 +56,12 @@
   <div class="section" id="module-AsciiShop">
 <span id="asciicat"></span><h1>AsciiCat<a class="headerlink" href="#module-AsciiShop" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
+<dt id="AsciiShop.RandomCat">
+<em class="property">class </em><code class="descclassname">AsciiShop.</code><code class="descname">RandomCat</code><a class="headerlink" href="#AsciiShop.RandomCat" title="Permalink to this definition">¶</a></dt>
+<dd><p>RandomCat grabs a random cat image for use in AsciiShop</p>
+</dd></dl>
+
+<dl class="class">
 <dt id="AsciiShop.AsciiImage">
 <em class="property">class </em><code class="descclassname">AsciiShop.</code><code class="descname">AsciiImage</code><span class="sig-paren">(</span><em>new_width='not_set'</em><span class="sig-paren">)</span><a class="headerlink" href="#AsciiShop.AsciiImage" title="Permalink to this definition">¶</a></dt>
 <dd><p>AsciiImage takes a jpg and converts it to an ascii art image.</p>
@@ -136,89 +142,6 @@ the current image. Prints the new image but does not store it.</p>
 </table>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="class">
-<dt id="AsciiShop.RandomCat">
-<em class="property">class </em><code class="descclassname">AsciiShop.</code><code class="descname">RandomCat</code><a class="headerlink" href="#AsciiShop.RandomCat" title="Permalink to this definition">¶</a></dt>
-<dd><p>RandomCat grabs a random cat image for use in AsciiShop</p>
-<dl class="method">
-<dt id="AsciiShop.RandomCat.get_image">
-<code class="descname">get_image</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AsciiShop.RandomCat.get_image" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets a cat image</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Gets a random cat image and saves to file system. Uses get_time_stamp for naming of file.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">none</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">none</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="AsciiShop.RandomCat.get_time_stamp">
-<code class="descname">get_time_stamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AsciiShop.RandomCat.get_time_stamp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets time in seconds</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Grabs current time in seconds from nuclear clock.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">current time in seconds</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="AsciiShop.RandomCat.name_image">
-<code class="descname">name_image</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AsciiShop.RandomCat.name_image" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="AsciiShop.RandomCat.save_image">
-<code class="descname">save_image</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AsciiShop.RandomCat.save_image" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="AsciiShop.get_cat">
-<code class="descclassname">AsciiShop.</code><code class="descname">get_cat</code><span class="sig-paren">(</span><em>directory=None</em>, <em>filename=None</em>, <em>format='png'</em><span class="sig-paren">)</span><a class="headerlink" href="#AsciiShop.get_cat" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="AsciiShop.list_to_matrix">
-<code class="descclassname">AsciiShop.</code><code class="descname">list_to_matrix</code><span class="sig-paren">(</span><em>l</em>, <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#AsciiShop.list_to_matrix" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Convert to 2D list of lists to help with manipulating the ascii image.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><p class="first">L = [0,1,2,3,4,5,6,7,8]</p>
-<p>L = to_matrix(L,3)</p>
-<p>L becomes:
-[[0,1,2],
-[3,4,5],
-[6,7,8]]</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>l</strong> &#8211; list to be converted</li>
-<li><strong>n</strong> &#8211; column size</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </div>

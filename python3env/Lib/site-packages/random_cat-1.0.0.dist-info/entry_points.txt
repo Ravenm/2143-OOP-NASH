@@ -1,0 +1,4 @@
+
+    [console_scripts]
+    randomcat = cat:main
+    

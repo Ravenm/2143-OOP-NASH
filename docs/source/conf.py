@@ -21,12 +21,14 @@ import os
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-# sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath('../../homework1'))
-sys.path.insert(1, os.path.abspath('../../homework2-gameoflife'))
-sys.path.insert(2, os.path.abspath('../../AsciiShop'))
-sys.path.insert(3, os.path.abspath('../../env'))
-sys.path.insert(4, os.path.abspath('../../shapes'))
+sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(1, os.path.abspath('../../homework1'))
+sys.path.insert(2, os.path.abspath('../../homework2-gameoflife'))
+sys.path.insert(3, os.path.abspath('../../AsciiShop'))
+sys.path.insert(4, os.path.abspath('../../env'))
+sys.path.insert(5, os.path.abspath('../../shapes'))
+sys.path.insert(6, os.path.abspath('../../BalancedBinaryTree'))
+sys.path.insert(7, os.path.abspath('../../python3env/Lib/site-packages'))
 
 # -- General configuration ------------------------------------------------
 

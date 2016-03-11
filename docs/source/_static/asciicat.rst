@@ -2,7 +2,10 @@
 AsciiCat
 ########
 
-
 .. automodule:: AsciiShop
-    :members:
-    :undoc-members:
+
+    .. autoclass:: RandomCat
+
+    .. autoclass:: AsciiImage
+        :members:
+        :undoc-members:
