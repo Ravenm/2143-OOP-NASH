@@ -20,7 +20,7 @@
 
 ### Comments:
 ```
-
+I could only put 100 in the D2L grade book. But I won't forget the extra credit when it comes to final grades.
 ```
 
 [1]: http://f.cl.ly/items/3E231i211n2E042B1U3K/right.png  "Correct"
