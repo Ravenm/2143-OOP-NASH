@@ -5,7 +5,7 @@
 | -       | Code was on github                                         | pass/fail   |   pass       | ![Alt text][1] |
 | -       | Code could be ran.                                         | pass/fail   |   pass       | ![Alt text][1] |
 | -       | Code was commented                                         |    20       |    20    | ![Alt text][1] |
-| -       | Followed naming conventions (named your file correctly).   |            |         | ![Alt text][1] |
+| -       | Followed naming conventions (named your file correctly).   |            |         |   |
 |         |      Classname: asciiShop                                  |    3       |     0   | ![Alt text][2] |
 |         |     Foldername: AsciiShop for all your files.              |    3       |     3   | ![Alt text][1] |   
 |         |     Renamed asciiArtClass.py to asciiShop.py               |    4       |     4   | ![Alt text][1] |
